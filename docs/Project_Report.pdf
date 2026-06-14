@@ -1,0 +1,190 @@
+# IoT-Based Air Quality & Pollution Monitoring Dashboard
+
+## Abstract
+
+Air pollution has become one of the most significant environmental and public health challenges worldwide. Continuous monitoring of air quality is essential to protect human health and support environmental sustainability. This project presents an IoT-Based Air Quality & Pollution Monitoring Dashboard that collects real-time environmental data using sensors and visualizes the information through an interactive dashboard.
+
+The system utilizes an ESP32 microcontroller, MQ135 air quality sensor, DHT22 temperature and humidity sensor, OLED display, MQTT communication protocol, and Node-RED dashboard. Sensor data is collected, processed, classified into air quality categories, and transmitted to a cloud-connected dashboard for monitoring and analysis. The system also logs data into CSV files for historical analysis and future reporting.
+
+The proposed solution demonstrates how IoT technologies can be used to create low-cost, scalable, and real-time environmental monitoring systems suitable for smart cities, educational institutions, industries, hospitals, and residential areas.
+
+## 1. Introduction
+
+Air pollution has become a critical global issue affecting millions of people every year. Harmful gases, industrial emissions, vehicle exhaust, and environmental pollutants contribute significantly to poor air quality. Traditional air monitoring stations are expensive and difficult to deploy in large numbers.
+
+The Internet of Things (IoT) provides a cost-effective solution by enabling distributed sensor networks capable of collecting environmental data in real time. This project aims to develop an IoT-based air quality monitoring system that continuously measures pollution levels and environmental parameters while providing real-time visualization through a dashboard.
+
+The system allows users to monitor air quality remotely, analyze historical trends, and receive alerts when pollution levels exceed predefined thresholds.
+
+## 2. Problem Statement
+
+Conventional air quality monitoring systems are expensive and often limited in deployment. Many locations lack access to real-time pollution monitoring, making it difficult for individuals and authorities to take preventive actions.
+
+The objective of this project is to develop a low-cost IoT solution capable of:
+
+* Monitoring air quality in real time.
+* Measuring temperature and humidity.
+* Classifying pollution levels.
+* Visualizing environmental data through a dashboard.
+* Storing historical records for analysis.
+* Supporting future alert mechanisms.
+
+## 3. Objectives
+
+The primary objectives of this project are:
+
+* To monitor air quality using the MQ135 sensor.
+* To measure temperature and humidity using DHT22.
+* To display sensor readings on an OLED screen.
+* To transmit sensor data using MQTT protocol.
+* To develop a Node-RED dashboard for visualization.
+* To classify AQI levels into Good, Moderate, Poor, and Hazardous categories.
+* To store environmental data in CSV format.
+* To create a scalable and industry-oriented IoT monitoring platform.
+
+## 4. System Architecture
+
+The proposed architecture consists of the following modules:
+
+1. Sensor Layer
+
+   * MQ135 Air Quality Sensor
+   * DHT22 Temperature and Humidity Sensor
+
+2. Processing Layer
+
+   * ESP32 Microcontroller
+
+3. Communication Layer
+
+   * MQTT Protocol
+   * MQTT Broker
+
+4. Visualization Layer
+
+   * Node-RED Dashboard
+
+5. Storage Layer
+
+   * CSV Data Logging
+
+Workflow:
+
+Sensors → ESP32 → MQTT Broker → Node-RED Dashboard → CSV Storage
+
+## 5. Hardware Components
+
+### ESP32
+
+ESP32 serves as the main processing unit. It collects sensor data, performs AQI classification, and publishes readings to the MQTT broker through Wi-Fi.
+
+### MQ135 Air Quality Sensor
+
+MQ135 detects harmful gases and air pollutants. The sensor output is used to estimate pollution levels and classify air quality.
+
+### DHT22 Sensor
+
+DHT22 measures ambient temperature and humidity, providing environmental context for air quality analysis.
+
+### OLED Display
+
+The OLED display provides local visualization of AQI values, temperature, humidity, and air quality status.
+
+### LED and Buzzer
+
+The LED and buzzer act as local alert indicators when hazardous pollution levels are detected.
+
+## 6. Software Components
+
+The following software tools were used:
+
+* Arduino IDE
+* Wokwi Simulator
+* Node-RED
+* Mosquitto MQTT Broker
+* MQTT Protocol
+* ESP32 Libraries
+* Adafruit SSD1306 Library
+* DHT Sensor Library
+* PubSubClient Library
+* ArduinoJson Library
+
+## 7. Methodology
+
+The project follows the following sequence:
+
+1. Read air quality values from MQ135.
+2. Read temperature and humidity from DHT22.
+3. Process sensor readings.
+4. Classify AQI level.
+5. Display results on OLED.
+6. Publish data to MQTT broker.
+7. Receive data in Node-RED.
+8. Visualize information using gauges and charts.
+9. Store records in CSV format.
+
+## 8. AQI Classification
+
+The system classifies air quality into four categories:
+
+* Good: AQI < 1000
+* Moderate: AQI 1000–1999
+* Poor: AQI 2000–2999
+* Hazardous: AQI ≥ 3000
+
+This classification enables users to quickly understand environmental conditions.
+
+## 9. Results and Observations
+
+The developed system successfully monitored air quality parameters and displayed real-time readings on the dashboard. MQTT communication enabled reliable data transmission between ESP32 and Node-RED.
+
+The dashboard provided:
+
+* Real-time AQI visualization.
+* Temperature and humidity monitoring.
+* Historical trend analysis.
+* Air quality classification.
+* Data logging through CSV files.
+
+The project demonstrated stable operation in a simulated environment using Wokwi.
+
+## 10. Applications
+
+The proposed system can be applied in:
+
+* Smart Cities
+* Schools and Colleges
+* Hospitals
+* Industrial Facilities
+* Residential Buildings
+* Environmental Research
+* Government Pollution Monitoring Programs
+
+## 11. Future Scope
+
+Future enhancements may include:
+
+* PM2.5 and PM10 sensors.
+* Email and SMS alerts.
+* Mobile application integration.
+* Cloud database storage.
+* AI-based pollution prediction.
+* GPS-based pollution mapping.
+* Multi-node monitoring networks.
+
+## 12. Conclusion
+
+The IoT-Based Air Quality & Pollution Monitoring Dashboard successfully demonstrates the integration of sensors, embedded systems, MQTT communication, and dashboard visualization. The project provides a low-cost and scalable solution for environmental monitoring and real-time pollution analysis.
+
+The implementation highlights practical applications of IoT technologies in environmental sustainability and smart city development. The project also serves as an effective learning platform for IoT, embedded systems, cloud communication, and real-time data analytics.
+
+## References
+
+1. ESP32 Technical Documentation.
+2. MQTT Protocol Documentation.
+3. Node-RED Official Documentation.
+4. MQ135 Sensor Datasheet.
+5. DHT22 Sensor Datasheet.
+6. Adafruit SSD1306 Library Documentation.
+7. Arduino Official Documentation.
+8. Environmental Protection Agency (EPA) Air Quality Guidelines.

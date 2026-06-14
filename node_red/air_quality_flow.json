@@ -1,0 +1,449 @@
+[
+    {
+        "id": "37f674b6d258b9d4",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5fa98dcad82a1376",
+        "type": "json",
+        "z": "37f674b6d258b9d4",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 850,
+        "y": 480,
+        "wires": [
+            [
+                "c7db4944e4976f69",
+                "2c4f7f0caee6b430",
+                "17d9dd49adb4fef3",
+                "37017c05ffa465c9"
+            ]
+        ]
+    },
+    {
+        "id": "c7db4944e4976f69",
+        "type": "function",
+        "z": "37f674b6d258b9d4",
+        "name": "function 7",
+        "func": "return [\n    { payload: msg.payload.aqi },\n    { payload: msg.payload.temperature },\n    { payload: msg.payload.humidity },\n    { payload: msg.payload.status },\n    { payload: msg.payload.aqi }\n];",
+        "outputs": 5,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 260,
+        "wires": [
+            [
+                "99ea3d03fa0ba066"
+            ],
+            [
+                "b4ac809f059849e5"
+            ],
+            [
+                "90a95624827d39f4"
+            ],
+            [
+                "fec2752626329aa7"
+            ],
+            [
+                "309bfaed97345564",
+                "1321a23b51436b96"
+            ]
+        ]
+    },
+    {
+        "id": "90a95624827d39f4",
+        "type": "ui_gauge",
+        "z": "37f674b6d258b9d4",
+        "name": "",
+        "group": "b3d9a53f20722c97",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidity gauge",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#a4eff4",
+            "#8ca7de",
+            "#f49adc"
+        ],
+        "seg1": "35",
+        "seg2": "75",
+        "diff": false,
+        "className": "",
+        "x": 1600,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "b4ac809f059849e5",
+        "type": "ui_gauge",
+        "z": "37f674b6d258b9d4",
+        "name": "",
+        "group": "b3d9a53f20722c97",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature gauge",
+        "label": "%",
+        "format": "{{value}} ",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#5c2e76",
+            "#bef4ce",
+            "#aba0a0"
+        ],
+        "seg1": "15",
+        "seg2": "35",
+        "diff": false,
+        "className": "",
+        "x": 1450,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "99ea3d03fa0ba066",
+        "type": "ui_gauge",
+        "z": "37f674b6d258b9d4",
+        "name": "",
+        "group": "b3d9a53f20722c97",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "AQI gauge",
+        "label": "PPM",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "4095",
+        "colors": [
+            "#90f490",
+            "#f9f99a",
+            "#ffb3b3"
+        ],
+        "seg1": "1000",
+        "seg2": "2000",
+        "diff": false,
+        "className": "",
+        "x": 1310,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "fec2752626329aa7",
+        "type": "ui_text",
+        "z": "37f674b6d258b9d4",
+        "group": "b3d9a53f20722c97",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Air Quality Status",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1510,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "309bfaed97345564",
+        "type": "ui_chart",
+        "z": "37f674b6d258b9d4",
+        "name": "",
+        "group": "b3d9a53f20722c97",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "Real-Time AQI Trend",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "4095",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1380,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7cad853baa578556",
+        "type": "mqtt in",
+        "z": "37f674b6d258b9d4",
+        "name": "",
+        "topic": "airquality/data",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "9173674e0f8d925f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 610,
+        "y": 500,
+        "wires": [
+            [
+                "5fa98dcad82a1376",
+                "2573b08f45943f0a"
+            ]
+        ]
+    },
+    {
+        "id": "2573b08f45943f0a",
+        "type": "debug",
+        "z": "37f674b6d258b9d4",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "2c4f7f0caee6b430",
+        "type": "debug",
+        "z": "37f674b6d258b9d4",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "17d9dd49adb4fef3",
+        "type": "csv",
+        "z": "37f674b6d258b9d4",
+        "name": "",
+        "spec": "rfc",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "all",
+        "multi": "mult",
+        "ret": "\\r\\n",
+        "temp": "timestamp,aqi,temperature,humidity,status",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 1050,
+        "y": 580,
+        "wires": [
+            [
+                "6644d63bd7ebc7b3"
+            ]
+        ]
+    },
+    {
+        "id": "6644d63bd7ebc7b3",
+        "type": "file",
+        "z": "37f674b6d258b9d4",
+        "name": "",
+        "filename": "C:\\IOT\\air_quality_logs.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "utf8",
+        "x": 1280,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1321a23b51436b96",
+        "type": "ui_chart",
+        "z": "37f674b6d258b9d4",
+        "name": "",
+        "group": "b3d9a53f20722c97",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "label": "Historical AQI Trend",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "4095",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1060,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "37017c05ffa465c9",
+        "type": "function",
+        "z": "37f674b6d258b9d4",
+        "name": "function 8",
+        "func": "let aqi = msg.payload.aqi;\n\nif(aqi < 1000){\n    msg.payload = \"GOOD\";\n}\nelse if(aqi < 2000){\n    msg.payload = \"MODERATE\";\n}\nelse if(aqi < 3000){\n    msg.payload = \"POOR\";\n}\nelse{\n    msg.payload = \"HAZARDOUS\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1180,
+        "y": 480,
+        "wires": [
+            [
+                "c93dee3e4f141534"
+            ]
+        ]
+    },
+    {
+        "id": "c93dee3e4f141534",
+        "type": "ui_text",
+        "z": "37f674b6d258b9d4",
+        "group": "b3d9a53f20722c97",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Current AQI Category",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1500,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "b3d9a53f20722c97",
+        "type": "ui_group",
+        "name": "Environmental Monitoring",
+        "tab": "333e297cac938b6b",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9173674e0f8d925f",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.emqx.io",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "333e297cac938b6b",
+        "type": "ui_tab",
+        "name": "Air Quality Dashboard",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "d8485651d4f4bae2",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6"
+        }
+    }
+]
