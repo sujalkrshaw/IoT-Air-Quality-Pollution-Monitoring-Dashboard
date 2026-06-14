@@ -126,28 +126,49 @@ IoT-Air-Quality-Pollution-Monitoring-Dashboard
 | 3000 – 4095 | 🔴 HAZARDOUS |
 
 ---
-
-## 📷 Screenshots
+## 📷 Project Screenshots
 
 ### 🔌 Wokwi Circuit
-ESP32 + MQ135 + DHT22 + OLED
+
+![Wokwi Circuit](images/01_wokwi_circuit.png)
+
+---
 
 ### 📺 OLED Display
-Real-Time AQI Monitoring
+
+![OLED Display](images/02_oled_display.png)
+
+---
 
 ### 📡 MQTT Communication
-ESP32 → MQTT Broker → Node-RED
 
-### 📊 Dashboard
-- AQI Gauge
-- Temperature Gauge
-- Humidity Gauge
-- Real-Time AQI Trend
-- Historical AQI Trend
-- Air Quality Status
+![MQTT Connected](images/04_mqtt_connected.png)
 
-### 💾 CSV Logging
-Historical Data Storage
+---
+
+### 🔴 Dashboard - Hazardous AQI
+
+![Hazardous Dashboard](images/06_dashboard_hazardous.png)
+
+---
+
+### 🟠 Dashboard - Poor AQI
+
+![Poor Dashboard](images/06_dashboard_poor.png)
+
+---
+
+### 🟡 Dashboard - Moderate AQI
+
+![Moderate Dashboard](images/07_dashboard_moderate.png)
+
+---
+
+### 📈 AQI Trend Analysis
+
+![AQI Chart](images/08_aqi_chart.png)
+
+---
 
 ---
 
